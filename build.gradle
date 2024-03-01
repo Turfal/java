@@ -1,0 +1,24 @@
+plugins {
+	id 'java'
+}
+
+group = 'com.project'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.postgresql:postgresql:42.2.23'
+	implementation 'javax.annotation:javax.annotation-api:1.3.2'
+}
+
+tasks.register('runMain', JavaExec) {
+	main = 'com.project.java.Main'
+	classpath = sourceSets.main.runtimeClasspath
+}
